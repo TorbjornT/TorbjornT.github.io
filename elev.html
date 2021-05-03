@@ -17,7 +17,7 @@
 		}
 
 		.leaflet-map {
-			height: 55%;
+			height: 70%;
 			max-height: 100vh;
 		}
 
@@ -86,6 +86,11 @@
 
 		var map = L.map('map', opts.map);
 
+        L.tileLayer("https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4&zoom={z}&x={x}&y={y}",
+          {
+              attribution: 'Kartverket'
+          }).addTo(map)
+
 		var controlElevation = L.control.elevation(opts.elevationControl.options);
 		var controlLayer = L.control.layers(null, null, opts.layersControl.options);
 
@@ -128,10 +133,6 @@
 		// L.setLocale('en:18');
 
 	</script>
-
-	<a href="https://github.com/Raruto/leaflet-elevation" class="view-on-github" style="position: fixed;bottom: 30px;left: calc(50% - 81px);z-index: 9999;"> <img alt="View on Github" src="https://raruto.github.io/img/view-on-github.png" title="View on Github"
-		 width="163"> </a>
-
 </body>
 
 </html>
