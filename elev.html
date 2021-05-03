@@ -86,13 +86,16 @@
 
 		var map = L.map('map', opts.map);
 
-        L.tileLayer("https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4&zoom={z}&x={x}&y={y}",
+        var topo = L.tileLayer("https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4&zoom={z}&x={x}&y={y}",
           {
               attribution: 'Kartverket'
-          }).addTo(map)
+          })
+        topo.addTo(map)
+        
+               
 
 		var controlElevation = L.control.elevation(opts.elevationControl.options);
-		var controlLayer = L.control.layers(null, null, opts.layersControl.options);
+		var controlLayer = L.control.layers(topo, null, opts.layersControl.options);
 
 		controlElevation.addTo(map);
 		controlLayer.addTo(map);
