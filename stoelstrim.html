@@ -22,11 +22,15 @@
         width: 100%;
         }
         
+     html,body {
+       height: 100%;
+       }
+        
    </style>
 </head>
 
 <body>
-<div id="mapid" style="width: 100%; height: 600px;"></div>
+<div id="mapid" style="width: 100%; height: 100%;"></div>
 
 <script>
 
@@ -107,7 +111,7 @@ var stoelar = {
 }
 
 
-
+// https://gis.stackexchange.com/questions/31951/showing-popup-on-mouse-over-not-on-click-using-leaflet
 var pointLayer = L.geoJSON(null, {
   pointToLayer: function(feature,latlng){
     label = '<b>' + String(feature.properties.name) + '</b><br>År: ' + String(feature.properties.desc) 
