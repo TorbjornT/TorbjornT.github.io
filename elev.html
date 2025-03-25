@@ -55,7 +55,7 @@ var mymap = L.map('mapid').setView([60.5, 7], 10);
 
 var controlElevation = L.control.elevation(opts.elevationControl.options);
 
-L.tileLayer("https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4&zoom={z}&x={x}&y={y}",
+L.tileLayer("https://cache.kartverket.no/v1/wmts/1.0.0/topo/default/webmercator/{z}/{y}/{x}.png",
           {
               attribution: 'Kartverket'
           }).addTo(mymap)
